@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.vsix
+*.zip
+extension/
+_ref_claude_code_zh_cn/
+extracted/
+extracted_vsix/
+openai.chatgpt*.vsix

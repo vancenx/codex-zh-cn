@@ -1,0 +1,59 @@
+{
+  "displayName": "Codex - OpenAI 的编码代理",
+  "description": "Codex 是一个与你协作的编码代理，包含在 ChatGPT Plus、Pro、Business、Edu 和 Enterprise 计划中。",
+  "commands": {
+    "chatgpt.implementTodo": "使用 Codex 实现",
+    "chatgpt.openSidebar": "打开 Codex 侧边栏",
+    "chatgpt.openCommandMenu": "打开 Codex 命令菜单",
+    "chatgpt.newCodexPanel": "新建 Codex Agent",
+    "chatgpt.addToThread": "添加到 Codex 对话",
+    "chatgpt.addFileToThread": "将文件添加到 Codex 对话",
+    "chatgpt.newChat": "在 Codex 侧边栏中新建对话",
+    "chatgpt.showLspMcpCliArgs": "复制用于 LSP MCP 的 Codex CLI 参数",
+    "chatgpt.dumpNuxState": "调试：将 NUX 状态输出到控制台",
+    "chatgpt.resetNuxState": "调试：重置 NUX 状态"
+  },
+  "configuration": {
+    "title": "Codex 设置",
+    "properties": {
+      "chatgpt.commentCodeLensEnabled": {
+        "description": "在 TODO 注释上方显示 CodeLens，以使用 Codex 实现。"
+      },
+      "chatgpt.cliExecutable": {
+        "description": "仅用于开发：Codex CLI 可执行文件路径。除非你正在开发 Codex CLI，否则不需要设置它。手动设置后，扩展的部分功能可能无法按预期工作。"
+      },
+      "chatgpt.openOnStartup": {
+        "description": "当扩展启动完成时，自动聚焦 Codex 侧边栏。"
+      },
+      "chatgpt.followUpQueueMode": {
+        "description": "控制后续消息是排队等待，还是直接接管当前运行。对于单次进行中的后续消息，按 Cmd/Ctrl+Shift+Enter 可执行相反行为。"
+      },
+      "chatgpt.composerEnterBehavior": {
+        "description": "Codex 输入框的 Enter 键行为。"
+      },
+      "chatgpt.reviewDelivery": {
+        "description": "尽可能在当前对话中内联启动 /review，或者启动一个独立的审查对话。"
+      },
+      "chatgpt.localeOverride": {
+        "description": "Codex UI 的首选语言。留空则自动检测。"
+      },
+      "chatgpt.runCodexInWindowsSubsystemForLinux": {
+        "description": "仅 Windows：当已安装 Windows Subsystem for Linux (WSL) 时，自动在 WSL 中运行 Codex。这样通常有更好的沙箱安全性和性能。当前 Windows 上的 Agent 模式依赖 WSL。修改后需要重新加载 VS Code 才会生效。"
+      }
+    }
+  },
+  "customEditors": {
+    "chatgpt.conversationEditor": "Codex 任务"
+  },
+  "chatSessions": {
+    "openai-codex": {
+      "displayName": "OpenAI Codex",
+      "description": "OpenAI Codex 的 VS Code 集成"
+    }
+  },
+  "languages": {
+    "codex-rules": [
+      "Codex 规则"
+    ]
+  }
+}

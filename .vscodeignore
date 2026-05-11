@@ -1,0 +1,11 @@
+.gitignore
+CLAUDE.md
+node_modules/**
+scripts/**
+extension/**
+_ref_claude_code_zh_cn/**
+extracted/**
+extracted_vsix/**
+openai.chatgpt*.vsix
+*.zip
+dist/**

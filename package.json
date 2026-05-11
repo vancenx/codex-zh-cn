@@ -1,0 +1,104 @@
+{
+  "name": "codex-zh-cn",
+  "displayName": "[非官方] Codex 中文汉化",
+  "description": "将 OpenAI 的 Codex VS Code 扩展切换为简体中文。",
+  "version": "0.1.1",
+  "publisher": "vancenx",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "keywords": [
+    "codex",
+    "openai",
+    "chatgpt",
+    "chinese",
+    "zh-cn",
+    "localization",
+    "translation"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:codexZhCn.applyTranslation",
+    "onCommand:codexZhCn.reapplyTranslation",
+    "onCommand:codexZhCn.restoreOriginal",
+    "onCommand:codexZhCn.openSettings"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codexZhCn.applyTranslation",
+        "title": "应用 Codex 汉化"
+      },
+      {
+        "command": "codexZhCn.reapplyTranslation",
+        "title": "重新应用 Codex 汉化"
+      },
+      {
+        "command": "codexZhCn.restoreOriginal",
+        "title": "还原 Codex 原版"
+      },
+      {
+        "command": "codexZhCn.openSettings",
+        "title": "打开 Codex 汉化设置"
+      }
+    ],
+    "configuration": {
+      "title": "Codex 汉化",
+      "properties": {
+        "codexZhCn.autoApplyOnStartup": {
+          "type": "boolean",
+          "default": true,
+          "description": "VS Code 启动后自动应用汉化。"
+        },
+        "codexZhCn.autoApplyOnUpdate": {
+          "type": "boolean",
+          "default": true,
+          "description": "检测到目标扩展更新后自动重新应用汉化。"
+        },
+        "codexZhCn.createBackup": {
+          "type": "boolean",
+          "default": true,
+          "description": "修改目标扩展前创建备份文件。"
+        },
+        "codexZhCn.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "显示应用和恢复结果通知。"
+        },
+        "codexZhCn.targetExtensionId": {
+          "type": "string",
+          "default": "openai.chatgpt",
+          "description": "目标扩展 ID，默认是 OpenAI 官方 Codex 插件。"
+        },
+        "codexZhCn.localeSettingKey": {
+          "type": "string",
+          "default": "chatgpt.localeOverride",
+          "description": "用于强制切换目标扩展语言的设置键。"
+        },
+        "codexZhCn.localeValue": {
+          "type": "string",
+          "default": "zh-CN",
+          "description": "要写入的语言值。"
+        },
+        "codexZhCn.applyLocaleOverride": {
+          "type": "boolean",
+          "default": true,
+          "description": "应用汉化时同步设置目标扩展的语言覆盖值。"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "verify": "node scripts/verify.js",
+    "package": "node -e \"require('fs').mkdirSync('dist',{recursive:true})\" && vsce package --allow-missing-repository --out dist/codex-zh-cn.vsix"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.7.1"
+  }
+}
