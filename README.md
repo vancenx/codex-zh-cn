@@ -4,13 +4,6 @@
 
 注意： 本项目与 openAI 官方或 Codex 团队无任何关联。
 
-当前方案不是重做一套语言包，而是基于 Codex 现有结构做最小改动：
-
-1. 把 `OpenAI.chatgpt` 扩展 `package.json` 里的命令名、设置说明等清单文案改成中文。
-2. 把 `chatgpt.localeOverride` 设为 `zh-CN`，让 Codex 内置的中文 webview 资源生效。
-3. 对 `webview/assets/app-main-*.js` 做定点补丁，强制打开 Codex 前端的 i18n 加载链。
-
-这比整包替换 webview bundle 更稳，升级后也更容易重新应用。
 
 ## 功能
 
@@ -45,6 +38,34 @@
 - 扩展 ID：`openai.chatgpt`
 - 语言设置键：`chatgpt.localeOverride`
 - 语言值：`zh-CN`
+
+## 项目结构
+
+```text
+codexcn/
+├─ lib/
+│  ├─ backup.js            # 备份与恢复
+│  ├─ locale-manager.js    # localeOverride 写入与恢复
+│  ├─ locator.js           # 定位目标扩展和目标文件
+│  ├─ manifest-patcher.js  # 修改 package.json 文案
+│  └─ webview-patcher.js   # 修改 app-main-*.js 的 i18n 开关
+├─ scripts/
+│  └─ verify.js            # 本地验证脚本
+├─ translations/
+│  └─ manifest-zh-cn.json  # 清单翻译数据
+├─ extension.js            # 扩展入口
+├─ package.json            # 扩展配置
+└─ README.md               # 项目说明
+```
+
+## 工作原理
+
+1. 定位扩展：优先使用 VS Code API 查找 `openai.chatgpt`，失败时再从本地扩展目录搜索。
+2. 查找目标文件：定位目标扩展中的 `package.json` 和 `webview/assets/app-main-*.js`。
+3. 创建备份：修改前为这两个文件生成 `.codex-zh-cn.bak` 备份。
+4. 应用汉化：把 `translations/manifest-zh-cn.json` 中的翻译合并到目标扩展 `package.json`。
+5. 启用中文界面：将 `chatgpt.localeOverride` 设为 `zh-CN`，并对 `app-main-*.js` 打最小补丁，强制开启前端 i18n。
+6. 重应用与恢复：启动时自动应用；检测到目标扩展更新后自动重应用；需要时可从备份还原原版。
 
 ## 开发
 
