@@ -4,7 +4,9 @@
 
 注意： 本项目与 openAI 官方或 Codex 团队无任何关联。
 
-![Codex 简体中文汉化包预览](https://github.com/vancenx/codex-zh-cn/blob/main/image.png)
+[从 VS Code 扩展商店安装](https://marketplace.visualstudio.com/items?itemName=vancenx.codex-zh-cn)
+
+![Codex 简体中文汉化包预览](https://raw.githubusercontent.com/vancenx/codex-zh-cn/refs/heads/main/image.png)
 
 ## 功能
 
