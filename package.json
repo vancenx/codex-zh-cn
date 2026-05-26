@@ -2,7 +2,7 @@
   "name": "codex-zh-cn",
   "displayName": "[非官方] Codex 中文汉化",
   "description": "将 OpenAI 的 Codex VS Code 扩展切换为简体中文。",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "publisher": "vancenx",
   "icon": "icon.png",
   "license": "MIT",
