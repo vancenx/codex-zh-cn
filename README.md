@@ -1,12 +1,12 @@
 # [非官方] Codex 简体中文汉化包
 
-本扩展是由社区开发的非官方汉化补丁，旨在为 Codex VS Code 插件提供简体中文界面支持。
+本扩展是由个人开发的非官方汉化补丁，旨在为 Codex VS Code 插件提供简体中文界面支持。
 
 注意： 本项目与 openAI 官方或 Codex 团队无任何关联。
 
 [从 VS Code 扩展商店安装](https://marketplace.visualstudio.com/items?itemName=vancenx.codex-zh-cn)
 
-![Codex 简体中文汉化包预览](https://raw.githubusercontent.com/vancenx/codex-zh-cn/refs/heads/main/image.png)
+![Codex 简体中文汉化包预览](https://cdn.jsdelivr.net/gh/vancenx/codex-zh-cn@main/image.png)
 
 ## 功能
 
